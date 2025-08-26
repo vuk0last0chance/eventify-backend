@@ -1,0 +1,25 @@
+### 1. Registracija NOVOG korisnika (koristi novi email svaki put za test)
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "ime": "Ana Anic",
+  "email": "ana.anic@example.com",
+  "lozinka": "Password456"
+}
+
+
+### 2. Prijava postojećeg korisnika (koristi podatke iz prethodnog koraka)
+# @name loginRequest
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "ana.anic@example.com",
+  "lozinka": "Password456"
+}
+
+### 3. Pristup zaštićenoj putanji (RUČNO)
+
+GET http://localhost:8080/api/users/me/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuYW5pY0BleGFtcGxlLmNvbSIsImlhdCI6MTc1NjMwOTc4MiwiZXhwIjoxNzU2OTE0NTgyLCJ1aWQiOjIsInJvbGUiOiJLT1JJU05JSyJ9.AyIsG_csqKDasY9jugj_BFSyrDC9JWWYSiGCB_kZvls
